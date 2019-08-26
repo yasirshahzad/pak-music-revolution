@@ -1,0 +1,69 @@
+﻿@using PakMusicRevolution.Models
+@model List<PakMusicRevolution.Models.Artist>
+@{
+	ViewBag.Title = "index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="under_header">
+	<img src="~/Content/images/bg/breadcrumbs1.png" alt="#">
+</div>
+	<div class="page-content back_to_up">
+		<div class="row clearfix mb">
+			<div class="breadcrumbIn">
+				<ul>
+					<li>
+						<a href="index-2.html" class="toptip" title="Homepage">
+							<i class="icon-home"></i>
+						</a>
+					</li>
+					<li> Artists </li>
+				</ul>
+			</div>
+			<!-- breadcrumb -->
+		</div>
+		<!-- row -->
+
+		<div class="row row-fluid artist-background clearfix mbf">
+			<div class="posts artists">
+				<div class="grid_12" style="margin-left: 0px !important;">
+                    <div class="def-block widget">
+                     
+
+        @foreach (Artist art in Model)
+      
+        {
+            <div class="aritst_singlep">
+                <div class="profile">
+                    <img src="@art.PROFILE_URL"/>
+                </div>
+
+
+                <div class="artist-bio">
+                    <h3>@art.artist_name</h3>
+                    <p>
+                        @art.artist_bio
+                    </p>
+                    
+                    @Html.ActionLink("More Details", "SingleArtist", new { id = art.artist_id }, new { @class = "sign-btn tbutton small" })
+                
+                </div>
+
+            </div>
+           
+        }
+                      
+                        
+
+
+                    </div>
+				</div>
+
+
+			</div>
+			<!-- posts -->
+
+		</div>
+		<!-- row clearfix -->
+	</div>

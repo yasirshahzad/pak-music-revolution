@@ -1,0 +1,264 @@
+/*
+    AUTHOR: Sam Johnson
+    MINIMusic Player
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #141942;
+}
+
+header h2 {
+  color: #f09f8b;
+  text-align: center;
+}
+
+/* HTML5 Audio player with playlist styles */
+
+
+.player {
+    background: #006600;
+    height: 222px;
+    position: relative;
+    width: 50%;
+    z-index: 2;
+    display: inline-block;
+}
+.title,
+.artist {
+  font-family: verdana;
+  left: 167px;
+  position: absolute;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.title {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  top: 23px;
+}
+.artist {
+  color: #eeeeee;
+  font-size: 12px;
+  top: 40px;
+}
+.pl {
+  background: url(../images/playlist.png) no-repeat;
+  cursor: pointer;
+  height: 40px;
+  left: 330px;
+  position: absolute;
+  top: 20px;
+  width: 39px;
+}
+.pl:hover {
+  top: 21px;
+}
+.cover {
+  border-radius: 5px 5px 5px 5px;
+  height: 94px;
+  left: 20px;
+  position: absolute;
+  top: 30px;
+  width: 94px;
+}
+.controls {
+  cursor: pointer;
+  left: 0px;
+  position: absolute;
+  top: 65px;
+  left: 122px;
+}
+.controls .play,
+.controls .pause {
+  width: 60px;
+  height: 60px;
+  margin: 0 5px 0px 5px;
+}
+.controls .play,
+.controls .pause,
+.controls .rew,
+.controls .fwd,
+.controls .stop {
+  text-indent: -10000px;
+  border: none;
+  float: left;
+}
+.controls .rew,
+.controls .fwd,
+.controls .stop {
+  width: 50px;
+  height: 50px;
+  margin: 5px 5px 5px 5px;
+    background-position: center;
+    background-size: contain;
+}
+.controls .play {
+  background: url(../Content/images/icons/icons8-play-96.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.controls .pause {
+  background: url(../Content/images/icons/icons8-pause-96.png) no-repeat;
+  display: none;
+  background-position: center;
+  background-size: contain;
+}
+.controls .rew {
+  background: url(../Content/images/icons/icons8-rewind-96.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.controls .fwd {
+  background: url(../Content/images/icons/icons8-fast-forward-96.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.controls .stop {
+  background: url(../Content/images/icons/icons8-stop-96.png) no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+.hidden {
+  display: none;
+}
+.controls .visible {
+  display: block;
+}
+.volume {
+  height: 11px;
+  left: 230px;
+  position: absolute;
+  top: 142px;
+  width: 140px;
+}
+.mute .volume-btn {
+  background: url(../images/volume-off.png) no-repeat;
+}
+.volume-btn {
+  background: url(../images/volume-up.png) no-repeat;
+  height: 20px;
+  width: 20px;
+  float: left;
+  position: relative;
+  top: -4px;
+}
+.volume-adjust {
+  height: 11px;
+  position: relative;
+  width: 80%;
+  background: #fff;
+  float: right;
+}
+.volume-adjust > div > div {
+  height: 11px;
+  background: #151b48;
+}
+.progressbar {
+  background-color: #fff;
+  cursor: pointer;
+  z-index: 1;
+  right: 6.875em; /* 110 */
+  height: 15px;
+  left: 0px;
+  position: absolute;
+  width: 90%;
+  top: 170px;
+  margin: 0px 5%;
+}
+.novolume .progressbar {
+  right: 4.375em; /* 70 */
+}
+.progressbar div {
+  width: 0%;
+  height: 15px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.bar-loaded {
+  background-color: #f1f1f1;
+  z-index: 1;
+}
+.bar-played {
+  background: #151b48;
+  z-index: 2;
+}
+.timeHolder {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  bottom: 10px;
+  position: absolute;
+  margin: 0px 5%;
+  width: 90%;
+}
+.time-current,
+.time-duration,
+.time-separator {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  float: left;
+}
+.volume .ui-slider-handle {
+  background: url("../images/spr.png") no-repeat scroll -201px -188px
+    rgba(0, 0, 0, 0);
+  height: 13px;
+  width: 13px;
+}
+.playlist {
+    background-color: #040404;
+    list-style-type: none;
+    padding-bottom: 10px;
+    padding-top: 15px;
+    position: relative;
+    width: 50%;
+    z-index: 1;
+    margin: 0px auto;
+    display: inline-block;
+    vertical-align: top;
+    height: 197px;
+    color: white;
+}
+
+.playlist li,
+.playlist div {
+  color: #151b48;
+  cursor: pointer;
+  margin: 0 0 5px 15px;
+}
+.playlist li > a,
+.playlist div > a {
+  color: #151b48;
+  text-decoration: none;
+}
+.playlist li.active,
+.playlist div.active {
+  font-weight: bold;
+}
+.slick-dots {
+  bottom: 5px !important;
+}
+.slick-dots li button:before {
+  font-size: 8px !important;
+}
+.playlist li > a {
+    color: white;
+    font-family: inherit; 
+}
+
+.playlist li  {
+    color: white;
+    font-family: inherit;
+    border-bottom: 1px solid green; 
+    width: 93%; 
+}
+li.active a {
+    color: green !important;
+}

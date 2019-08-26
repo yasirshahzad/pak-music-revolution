@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        
+        <!--Jquery-->
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+        
+        <!-- Styles -->
+        <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/bootstrap-responsive.min.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/style.css" id="dark" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/settings.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/icons.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="~/Content/music_palyer_styles.css" media="screen" />
+        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+       
+
+    </head>
+<body id="fluidGridSystem">
+<div id="layout" class="full">
+    <!---Start header-->
+    @RenderPage("~/Views/Shared/_Header.cshtml")
+    <!-- end header -->
+    <!---Start Slider Revolution Partial-->
+    <!--Here-->
+    <!---End Slider Revolution Partial-->
+    @RenderBody()
+    <!-- end page content -->
+    <!--Start Footer-->
+    @RenderPage("~/Views/Shared/_Footer.cshtml")
+    <!-- end footer -->
+
+</div>
+<!-- end layout -->
+<script type="text/javascript" src="~/Scripts/theme20.js"></script>
+<script type="text/javascript" src="~/Scripts/musicplayer-min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.tweet.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.flexslider-min.js"></script>
+    <script type="text/javascript" src="~/Scripts/countdown.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery.nicescroll.min.js"></script>
+<script type="text/javascript" src="~/Scripts/custom.js"></script>
+<script type="text/javascript" src="~/Scripts/playercustom.js"></script>
+</body>
+</html>
